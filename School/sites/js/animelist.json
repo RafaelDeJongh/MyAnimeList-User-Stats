@@ -6,7 +6,7 @@
 			"user_export_type":"1",
 			"user_total_anime":"4525",
 			"user_total_watching":"231",
-			"user_total_completed":"3501",
+			"user_total_completed":"3500",
 			"user_total_onhold":"34",
 			"user_total_dropped":"0",
 			"user_total_plantowatch":"759"
@@ -24202,18 +24202,6 @@
 				"my_start_date":"2016-11-11",
 				"my_finish_date":"2016-11-24",
 				"my_score":"7",
-				"my_status":"Completed",
-				"my_rewatch_value":"Very Low",
-				"my_rewatching":"0"
-			},
-			{
-				"series_title":"Konjiki no Gash Bell!!:Hashire Gash!! Ubawareta Umagon",
-				"series_type":"OVA",
-				"series_episodes":"1",
-				"my_watched_episodes":"1",
-				"my_start_date":"2016-11-24",
-				"my_finish_date":"2016-11-24",
-				"my_score":"6",
 				"my_status":"Completed",
 				"my_rewatch_value":"Very Low",
 				"my_rewatching":"0"
