@@ -27,8 +27,8 @@ $('#fullpage').fullpage({
 });
 //Database Parse
 var request = new XMLHttpRequest();
-//request.open("GET","js/myanimelist.xml",true);
-request.open("GET","https://myanimelist.net/malappinfo.php?u=" + MALUser + "&status=all&type=anime",true);
+request.open("GET","js/myanimelist.xml",true);
+//request.open("GET","https://myanimelist.net/malappinfo.php?u=" + MALUser + "&status=all&type=anime",true);
 //request.open("GET","https://crossorigin.me/https://myanimelist.net/malappinfo.php?u=" + MALUser + "&status=all&type=anime",true);
 request.onload = function(){
 	if(request.status>=200 && request.status<400){
