@@ -1,3 +1,5 @@
-# Data Collection
+# Anime Collection
+A general oversight of my personal Anime Collection focused on the MyAnimeList XML API. 
+Created by Rafaël De Jongh
 
-A set of files required for future reference and projects
+Public Preview: http://rafaeldejongh.github.io/Anime-Collection
