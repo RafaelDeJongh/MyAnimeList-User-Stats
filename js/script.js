@@ -1,6 +1,4 @@
 $(document).ready(function(){
-//Start
-var MALUser = "rafaeldejongh";
 //FullPage
 $('#fullpage').fullpage({
 	navigation:true,
@@ -10,11 +8,11 @@ $('#fullpage').fullpage({
 	autoScrolling:true,
 	fitToSection:true,
 	fitToSectionDelay:1000,
-	scrollBar:true,
+	scrollBar:false,
 	easing:'easeInOutCubic',
 	easingcss3:'ease-in-out',
 	loopBottom:true,
-	loopTop:false,
+	loopTop:true,
 	scrollOverflow:false,
 	scrollOverflowOptions:null,
 	touchSensitivity:15,
@@ -25,18 +23,26 @@ $('#fullpage').fullpage({
 	sectionSelector:'section',
 	lazyLoading:false
 });
+//Start - Get MAL Name
+$("main").hide();
+$("#userfill form").submit(function(e){
+e.preventDefault();
+var MALUser = $("input#username").val();
+$("#userfill").hide().next().show();
+$("#user").html(MALUser.replace(/([A-Z])/g,' $1').trim()).attr("href","https://myanimelist.net/profile/" + MALUser); 
 //Database Parse
 var request = new XMLHttpRequest();
-request.open("GET","js/myanimelist.xml",true);
-//request.open("GET","https://myanimelist.net/malappinfo.php?u=" + MALUser + "&status=all&type=anime",true);
-//request.open("GET","https://crossorigin.me/https://myanimelist.net/malappinfo.php?u=" + MALUser + "&status=all&type=anime",true);
+//https://myanimelist.net/malappinfo.php?u=rafaeldejongh&status=all&type=anime
+//http://rafaeldejongh.tk/data/sites/MAL/malappinfo.php?u=rafaeldejongh
+request.open("GET","http://rafaeldejongh.tk/data/sites/MAL/malappinfo.php?u=" + MALUser,true);
 request.onload = function(){
 	if(request.status>=200 && request.status<400){
 	var x2js = new X2JS();
 	var jsonObj = x2js.xml_str2json(request.responseText);
 	var database = JSON.parse(JSON.stringify(jsonObj));
-	var countEpisode,cOVA,cTV,cMovie,cSpecial,cONA,cMusic,one,two,tree,four,five,six,seven,eight,nine,ten;
-	countEpisode=cOVA=cTV=cMovie=cSpecial=cONA=cMusic=one=two=tree=four=five=six=seven=eight=nine=ten=0;
+	var s20,s30,s40,s50,s60,s70,s80,s90,s00,s10,cYear,countEpisode,cOVA,cTV,cMovie,cSpecial,cONA,cMusic,one,two,tree,four,five,six,seven,eight,nine,ten;
+	s20=s30=s40=s50=s60=s70=s80=s90=s00=s10=cYear=countEpisode=cOVA=cTV=cMovie=cSpecial=cONA=cMusic=one=two=tree=four=five=six=seven=eight=nine=ten=0;
+//Database Anime Loop
 for(i=0;i<database.myanimelist.anime.length;++i){
 	countEpisode += parseInt(database.myanimelist.anime[i].my_watched_episodes);
 	$("#episodes").text(countEpisode);
@@ -61,6 +67,19 @@ for(i=0;i<database.myanimelist.anime.length;++i){
 		if(sType=="4"){cSpecial++;}
 		if(sType=="5"){cONA++;}
 		if(sType=="6"){cMusic++;}
+	//Decades
+	var Year=database.myanimelist.anime[i].series_start.slice(0,-6);
+	var countY = Year.slice(0,-3).length;
+	if(Year>="1920" && Year<="1930"){s20++;}
+	if(Year>="1930" && Year<="1940"){s30++;}
+	if(Year>="1940" && Year<="1950"){s40++;}
+	if(Year>="1950" && Year<="1960"){s50++;}
+	if(Year>="1960" && Year<="1970"){s60++;}
+	if(Year>="1970" && Year<="1980"){s70++;}
+	if(Year>="1980" && Year<="1990"){s80++;}
+	if(Year>="1990" && Year<="2000"){s90++;}
+	if(Year>="2000" && Year<="2010"){s00++;}
+	if(Year>="2010" && Year<="2020"){s10++;}
 	}
 }
 //Number Counter
@@ -77,7 +96,7 @@ $("#completed").each(function(){
 $("#episodes").each(function(){
 	var $this = $(this);
 	$({Counter:0}).animate({Counter:countEpisode},{
-	duration:6000,
+	duration:5000,
 	easing:'easeOutQuart',
 	step:function(){
 		$this.text(Math.ceil(this.Counter));
@@ -175,9 +194,33 @@ var seriesChart = new Chart(sChart,{
 		}
 	}
 });
+var lChart = $("#yearChart");
+var lineChart = new Chart(lChart,{
+	type:'line',
+	data:{
+		labels: ["1970s","1980s","1990s","2000s","2010s"],
+		datasets:[{
+			label:'# of Anime Completed per decades',
+			data:[s70,s80,s90,s00,s10],
+			borderWidth:1,
+			backgroundColor:"rgba(75,192,192,.2)",
+			borderColor:"rgba(75,192,192,1)",
+			pointBorderColor:"rgba(75,192,192,1)",
+			pointBackgroundColor:"#fff",
+			pointBorderWidth:1,
+			pointHoverRadius:5,
+			pointHoverBackgroundColor:"rgba(75,192,192,1)",
+			pointHoverBorderColor:"rgba(220,220,220,1)",
+			pointHoverBorderWidth:2,
+			pointHitRadius:10
+		}]
+	}
+});
 //Request Check End
 }
 };
 request.send();
+//End of Form Submit
+});
 //End
 });
