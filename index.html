@@ -11,71 +11,83 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<!--UserFill-->
+<aside id="userfill">
+	<h1>MyAnimeList User Stats</h1>
+	<form id="malu">
+		<input id="username" type="text" placeholder="Your MAL Username" required/>
+		<button>Submit</button>
+	</form>
+</aside>
+<!--Main Content-->
 <main id="fullpage">
-<!--Introduction-->
-<section id="home">
-	<h1>Anime Collection</h1>
-	<h4>Completed Anime: <span id="completed">0</span></h4>
-	<h5>Episodes Seen: <span id="episodes">0</span></h5>
-</section>
-<!--Top 10 Anime Series-->
-<section id="top">
-	<h2>Top 10 Anime Series</h2>
-	<div id="topS">
-		<!--Reeks1-->
-		<a href="https://myanimelist.net/anime/8425" target="_blank">
-			<img src="https://myanimelist.cdn-dena.com/images/anime/11/27906.webp" alt="Gosick"/>
-			<span>1. Gosick</span>
-		</a>
-		<a href="http://myanimelist.net/anime/4224" target="_blank">
-			<img src="https://myanimelist.cdn-dena.com/images/anime/13/22128.webp" alt="Toradora"/>
-			<span>2. Toradora</span>
-		</a>
-		<a href="https://myanimelist.net/anime/1491/Ginga_Tetsudou_999" target="_blank">
-			<img src="https://myanimelist.cdn-dena.com/images/anime/7/27801.webp" alt="Ginga Tetsudou 999"/>
-			<span>3. Ginga Tetsudou 999</span>
-		</a>
-		<a href="https://myanimelist.net/anime/14719" target="_blank">
-			<img src="https://myanimelist.cdn-dena.com/images/anime/3/40409.webp" alt="JoJo no Kimyou na Bouken"/>
-			<span>4. JoJo no Kimyou na Bouken</span>
-		</a>
-		<a href="https://myanimelist.net/anime/2924" target="_blank">
-			<img src="https://myanimelist.cdn-dena.com/images/anime/11/50411.webp" alt="ef: A Tale of Memories."/>
-			<span>5. ef: A Tale of Memories.</span>
-		</a>
-		<!--Reeks2-->
-		<a href="https://myanimelist.net/anime/9253" target="_blank">
-			<img src="https://myanimelist.cdn-dena.com/images/anime/5/73199.webp" alt="Steins;Gate"/>
-			<span>6. Steins;Gate</span>
-		</a>
-		<a href="https://myanimelist.net/anime/2167" target="_blank">
-			<img src="https://myanimelist.cdn-dena.com/images/anime/13/8498.webp" alt="Clannad"/>
-			<span>7. Clannad</span>
-		</a>
-		<a href="https://myanimelist.net/anime/3702" target="_blank">
-			<img src="https://myanimelist.cdn-dena.com/images/anime/3/9853.webp" alt="Detroit Metal City"/>
-			<span>8. Detroit Metal City</span>
-		</a>
-		<a href="https://myanimelist.net/anime/2001" target="_blank">
-			<img src="https://myanimelist.cdn-dena.com/images/anime/4/5123.webp" alt="Tengen Toppa Gurren Lagann"/>
-			<span>9. Tengen Toppa Gurren Lagann</span>
-		</a>
-		<a href="https://myanimelist.net/anime/777" target="_blank">
-			<img src="https://myanimelist.cdn-dena.com/images/anime/6/7333.webp" alt="Hellsing Ultimate"/>
-			<span>10. Hellsing Ultimate</span>
-		</a>
-	</div>
-</section>
-<!--Rating Graph-->
-<section id="ratinggraph">
-<canvas id="ratingChart" class="chart" width="300vw" height="160vw"></canvas>
-</section>
-<!--Series Type Graph-->
-<section id="seriesgraph">
-<canvas id="seriesChart" class="chart" width="300vw" height="160vw"></canvas>
-</section>
+	<!--Home-->
+	<section id="home">
+		<h2><a href="https://myanimelist.net/" target="_blank" id="user">User</a>'s Anime Stats</h2>
+		<h4>Completed Anime: <span id="completed">0</span></h4>
+		<h5>Episodes Seen: <span id="episodes">0</span></h5>
+	</section>
+	<!--Top 10 Anime Series
+	<section id="top">
+		<h2>Top 10 Anime Series</h2>
+		<div id="topS">
+			<a href="https://myanimelist.net/anime/8425" target="_blank">
+				<img src="https://myanimelist.cdn-dena.com/images/anime/11/27906.webp" alt="Gosick" />
+				<span>1. Gosick</span>
+			</a>
+			<a href="http://myanimelist.net/anime/4224" target="_blank">
+				<img src="https://myanimelist.cdn-dena.com/images/anime/13/22128.webp" alt="Toradora" />
+				<span>2. Toradora</span>
+			</a>
+			<a href="https://myanimelist.net/anime/1491/Ginga_Tetsudou_999" target="_blank">
+				<img src="https://myanimelist.cdn-dena.com/images/anime/7/27801.webp" alt="Ginga Tetsudou 999" />
+				<span>3. Ginga Tetsudou 999</span>
+			</a>
+			<a href="https://myanimelist.net/anime/14719" target="_blank">
+				<img src="https://myanimelist.cdn-dena.com/images/anime/3/40409.webp" alt="JoJo no Kimyou na Bouken" />
+				<span>4. JoJo no Kimyou na Bouken</span>
+			</a>
+			<a href="https://myanimelist.net/anime/2924" target="_blank">
+				<img src="https://myanimelist.cdn-dena.com/images/anime/11/50411.webp" alt="ef: A Tale of Memories." />
+				<span>5. ef: A Tale of Memories.</span>
+			</a>
+			<a href="https://myanimelist.net/anime/9253" target="_blank">
+				<img src="https://myanimelist.cdn-dena.com/images/anime/5/73199.webp" alt="Steins;Gate" />
+				<span>6. Steins;Gate</span>
+			</a>
+			<a href="https://myanimelist.net/anime/2167" target="_blank">
+				<img src="https://myanimelist.cdn-dena.com/images/anime/13/8498.webp" alt="Clannad" />
+				<span>7. Clannad</span>
+			</a>
+			<a href="https://myanimelist.net/anime/3702" target="_blank">
+				<img src="https://myanimelist.cdn-dena.com/images/anime/3/9853.webp" alt="Detroit Metal City" />
+				<span>8. Detroit Metal City</span>
+			</a>
+			<a href="https://myanimelist.net/anime/2001" target="_blank">
+				<img src="https://myanimelist.cdn-dena.com/images/anime/4/5123.webp" alt="Tengen Toppa Gurren Lagann" />
+				<span>9. Tengen Toppa Gurren Lagann</span>
+			</a>
+			<a href="https://myanimelist.net/anime/777" target="_blank">
+				<img src="https://myanimelist.cdn-dena.com/images/anime/6/7333.webp" alt="Hellsing Ultimate" />
+				<span>10. Hellsing Ultimate</span>
+			</a>
+		</div>
+	</section>-->
+	<!--Rating Graph-->
+	<section id="ratinggraph">
+		<canvas id="ratingChart" class="chart" width="300vw" height="160vw"></canvas>
+	</section>
+	<!--Series Type Graph-->
+	<section id="seriesgraph">
+		<canvas id="seriesChart" class="chart" width="300vw" height="160vw"></canvas>
+	</section>
+	<!--Decade Count-->
+	<section id="years">
+		<canvas id="yearChart" class="chart" width="300vw" height="160vw"></canvas>
+	</section>
 </main>
-<footer>Copyright &copy; 2016 | <a href="http://www.rafaeldejongh.com" target="_blank">Rafa&euml;l De Jongh</a> | <a href="https://myanimelist.net/profile/RafaelDeJongh" target="_blank">MyAnimeList</a></footer>
+<!--Footer-->
+<footer>Copyright &copy; 2016 | Created by <a href="http://www.rafaeldejongh.com" target="_blank">Rafa&euml;l De Jongh</a> | <a href="https://myanimelist.net/profile/RafaelDeJongh" target="_blank">MyAnimeList</a></footer>
 <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.9/jquery.fullPage.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/x2js/1.2.0/xml2json.min.js'></script>
