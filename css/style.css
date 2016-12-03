@@ -2,6 +2,8 @@
 /*---------------
 **Content Table**
 - Body
+- MAL Form
+	- Button
 - Content
 - Footer
 - Links
@@ -12,28 +14,96 @@ body{
 	width:100%;
 	min-height:100%;
 	background:#111;
-	color:#eee;
+	color:#eee
+}
+/*MAL Form
+-------------*/
+aside{
+	background:inherit;
+	width:100%;
+	height:100%;
+	position:fixed;
+	padding-top:40vh;
+	margin:auto;
+	text-align:center;
+	z-index:9999
+}
+aside h1{
+	display:inline-block;
+	border-bottom:1px solid #900
+}
+input{
+	background:inherit;
+	color:#fff;
+	margin:1.5em auto;
+	padding:14px 12px;
+	border:1px solid #900;
+	border-left:none;
+	border-right:none;
+	transition:padding .2s ease-in-out;
+	text-align:center
+}
+#malu input:focus{padding:17px 12px}
+:-webkit-autofill{
+		-webkit-box-shadow:0 0 0 1000px #0f0f0f inset;
+		-webkit-text-fill-color:#fff!important
+}
+::-webkit-input-placeholder{color:inherit}
+     :-ms-input-placeholder{color:inherit}
+         ::-moz-placeholder{color:inherit}
+          :-moz-placeholder{color:inherit}
+/*Button
+-------------*/
+button{
+	background:transparent;
+	border:1px solid #900;
+	color:#fff;
+	display:block;
+	position:relative;
+	font-weight:600;
+	font-variant:small-caps;
+	padding:12px 25px 10px;
+	margin:1em auto;
+	outline:none
+}
+button:hover,button:active{border-color:#DC0000}
+button:before{
+	content:"";
+	position:absolute;
+	left:-6px;
+	top:1px;
+	width:104%;
+	height:115%;
+	border:inherit;
+	transition:all .2s ease-in-out
+}
+button:hover:before{
+	top:3px;
+	left:-8px
+}
+button:active:before{
+	top:5px;
+	left:-6px
 }
 /*Content
 -------------*/
-main{overflow-x:hidden}
 .fp-section.fp-table,.fp-slide.fp-table{
 	margin:auto;
 	width:80%;
-	text-align:center;
+	text-align:center
 }
-#home h1{font-size:3em}
+#home h2{font-size:3em;margin:0;text-transform:capitalize}
 #home h4{margin-top:1em}
 h2{margin-bottom:1em}
 #topS{
 	height:100%;
-	display:inline-block;
+	display:inline-block
 }
 #topS img{
 	object-fit:cover;
 	object-position:top;
 	width:100%;
-	height:25%;
+	height:25%
 }
 #topS a{
 	position:relative;
@@ -55,12 +125,12 @@ h2{margin-bottom:1em}
 	align-items: center;
 	justify-content: center;
 	background:rgba(0,0,0,.7);
-	transition:all .3s ease-in-out;
+	transition:all .3s ease-in-out
 }
 #topS a:hover span{opacity:1}
 .chart{
 	max-width:1200px;
-	margin:auto;
+	margin:auto
 }
 /*Footer
 -------------*/
@@ -72,6 +142,7 @@ footer{
 	height:auto;
 	background:#111;
 	padding:1.5% 0;
+	z-index:99999;
 }
 /*FadeInOnLoad
 ------------------*/
@@ -91,7 +162,7 @@ footer{
 	        animation-duration:5s;
 	-webkit-animation-delay:.8s;
 	   -moz-animation-delay:.8s;
-	        animation-delay:.8s;
+	        animation-delay:.8s
 }
 /*Links
 -------------*/
@@ -100,8 +171,8 @@ a:link,a:visited{
 	text-decoration:none;
 	-webkit-transition:all .3s ease-in-out;
 	   -moz-transition:all .3s ease-in-out;
-		   -o-transition:all .3s ease-in-out;
-			    transition:all .3s ease-in-out;
+	     -o-transition:all .3s ease-in-out;
+	        transition:all .3s ease-in-out;
 	border-bottom:1px solid transparent;
 }
 a:active, a:hover{
