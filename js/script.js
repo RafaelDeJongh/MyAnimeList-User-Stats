@@ -33,8 +33,8 @@ $("#user").html(MALUser.replace(/([A-Z])/g,' $1').trim()).attr("href","https://m
 //Database Parse
 var request = new XMLHttpRequest();
 //https://myanimelist.net/malappinfo.php?u=rafaeldejongh&status=all&type=anime
-//http://rafaeldejongh.tk/data/sites/MAL/malappinfo.php?u=rafaeldejongh
-request.open("GET","http://rafaeldejongh.tk/data/sites/MAL/malappinfo.php?u=" + MALUser,true);
+//https://rafaeldejongh-sites.ga/MyAnimeList-User-Stats/malappinfo.php?u=rafaeldejongh
+request.open("GET","https://rafaeldejongh-sites.ga/MyAnimeList-User-Stats/malappinfo.php?u=" + MALUser,true);
 request.onload = function(){
 	if(request.status>=200 && request.status<400){
 	var x2js = new X2JS();
