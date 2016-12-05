@@ -220,6 +220,25 @@ var lineChart = new Chart(lChart,{
 }
 };
 request.send();
+//Favorites
+//http://rafaeldejongh-sites.ga/MyAnimeList-User-Stats/userInfo.php?username=rafaeldejongh
+var requestFav = new XMLHttpRequest();
+requestFav.open("GET","https://rafaeldejongh-sites.ga/MyAnimeList-User-Stats/userInfo.php?username=" + MALUser,true);
+requestFav.onload = function(){
+	if(requestFav.status>=200 && requestFav.status<400){
+		var databaseFav = JSON.parse(requestFav.responseText);
+		$("#favcount").html(databaseFav.length);
+	if(databaseFav.length !== 0){
+		for(i=0;i<databaseFav.length;++i){
+			$("#topS").append('<a href="https://myanimelist.net/anime/'+ databaseFav[i].fav_id +'" target="_blank"><img src="'+ databaseFav[i].fav_image +'" alt="'+	databaseFav[i].fav_name +'"/><span>'+ databaseFav[i].fav_name.replace(/_/g,' ') +'</span></a>');
+		}
+	}else{
+		$("#top").remove();
+		$("#fp-nav").addClass("nofav");
+	}
+	}
+};
+requestFav.send();
 //End of Form Submit
 });
 //End
