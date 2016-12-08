@@ -1,5 +1,5 @@
 <?php
-// Originally Created by FoxInFlames - https://github.com/FoxInFlame/matomari
+// Originally Created by FoxInFlame - https://github.com/FoxInFlame/matomari
 // Modified by Rafael De Jongh
 /* Headers
 -------------------------------*/

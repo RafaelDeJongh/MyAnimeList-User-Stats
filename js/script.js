@@ -221,9 +221,9 @@ var lineChart = new Chart(lChart,{
 };
 request.send();
 //Favorites
-//http://rafaeldejongh-sites.ga/MyAnimeList-User-Stats/userInfo.php?username=rafaeldejongh
+//http://rafaeldejongh-sites.ga/MyAnimeList-User-Stats/userFavInfo.php?username=rafaeldejongh
 var requestFav = new XMLHttpRequest();
-requestFav.open("GET","https://rafaeldejongh-sites.ga/MyAnimeList-User-Stats/userInfo.php?username=" + MALUser,true);
+requestFav.open("GET","https://rafaeldejongh-sites.ga/MyAnimeList-User-Stats/userFavInfo.php?username=" + MALUser,true);
 requestFav.onload = function(){
 	if(requestFav.status>=200 && requestFav.status<400){
 		var databaseFav = JSON.parse(requestFav.responseText);
