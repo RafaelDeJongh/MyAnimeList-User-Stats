@@ -34,7 +34,7 @@ $("#user").html(MALUser.replace(/([A-Z])/g,' $1').trim()).attr("href","https://m
 var request = new XMLHttpRequest();
 //https://myanimelist.net/malappinfo.php?u=rafaeldejongh&status=all&type=anime
 //https://rafaeldejongh-sites.ga/MyAnimeList-User-Stats/malappinfo.php?u=rafaeldejongh
-request.open("GET","https://rafaeldejongh-sites.ga/MyAnimeList-User-Stats/malappinfo.php?u=" + MALUser,true);
+request.open("GET","//rafaeldejongh-sites.ga/MyAnimeList-User-Stats/malappinfo.php?u=" + MALUser,true);
 request.onload = function(){
 	if(request.status>=200 && request.status<400){
 	var x2js = new X2JS();
@@ -223,7 +223,7 @@ request.send();
 //Favorites
 //http://rafaeldejongh-sites.ga/MyAnimeList-User-Stats/userFavInfo.php?username=rafaeldejongh
 var requestFav = new XMLHttpRequest();
-requestFav.open("GET","https://rafaeldejongh-sites.ga/MyAnimeList-User-Stats/userFavInfo.php?username=" + MALUser,true);
+requestFav.open("GET","//rafaeldejongh-sites.ga/MyAnimeList-User-Stats/userFavInfo.php?username=" + MALUser,true);
 requestFav.onload = function(){
 	if(requestFav.status>=200 && requestFav.status<400){
 		var databaseFav = JSON.parse(requestFav.responseText);
