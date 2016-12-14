@@ -4,56 +4,58 @@
 <meta charset="utf-8">
 <meta name="author" content="Rafa&euml;l De Jongh">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anime Collection</title>
+<title>MyAnimeList User Stats</title>
 <link rel="shortcut icon" href="favicon.ico">
-<link rel='stylesheet prefetch' href='https://rafaeldejongh.github.io/Rafael-CSS-Reset/reset.min.css'>
-<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.9/jquery.fullPage.min.css'>
+<link rel="stylesheet prefetch" href="https://rafaeldejongh.github.io/Rafael-CSS-Reset/reset.min.css">
+<link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.9/jquery.fullPage.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <!--UserFill-->
 <aside id="userfill">
-  <h1>MyAnimeList User Stats</h1>
-  <form id="malu">
-    <input id="username" type="text" placeholder="Your MAL Username" title="Fill in your MyAnimeList username" required/>
-    <button>Submit</button>
-  </form>
+	<h1>MyAnimeList User Stats</h1>
+	<form id="malu">
+		<input id="username" type="text" placeholder="Your MAL Username" title="Fill in your MyAnimeList username" required/>
+		<button>Submit</button>
+	</form>
 </aside>
 <!--Main Content-->
 <main id="fullpage">
-  <!--Home-->
-  <section id="home">
-    <h2><a href="https://myanimelist.net/" target="_blank" id="user">User</a>'s Anime Stats</h2>
-    <h4>Completed Anime: <span id="completed">0</span></h4>
-    <h5>Episodes Seen: <span id="episodes">0</span></h5>
-  </section>
-  <!--Top Anime Series-->
-  <section id="top">
-    <h2>Top <span id="favcount">0</span> Anime Series</h2>
-    <div id="topS">
-    </div>
-  </section>
-  <!--Rating Graph-->
-  <section id="ratinggraph">
-    <canvas id="ratingChart" class="chart" width="300vw" height="160vw"></canvas>
-  </section>
-  <!--Series Type Graph-->
-  <section id="seriesgraph">
-    <canvas id="seriesChart" class="chart" width="300vw" height="160vw"></canvas>
-  </section>
-  <!--Decade Count-->
-  <section id="years">
-    <canvas id="yearChart" class="chart" width="300vw" height="160vw"></canvas>
-  </section>
+	<!--Home-->
+	<section id="home">
+		<h2 id="nexist">This MAL Account does not exist!</h2>
+		<h2><a href="https://myanimelist.net/" target="_blank" id="user">User</a>"s Anime Stats</h2>
+		<h4>Completed Anime: <span id="completed">0</span></h4>
+		<h5>Episodes Seen: <span id="episodes">0</span></h5>
+	</section>
+	<!--Top Anime Series-->
+	<section id="top">
+		<h2>Top <span id="favcount">0</span> Anime Series</h2>
+		<div id="topS">
+		</div>
+	</section>
+	<!--Rating Graph-->
+	<section id="ratinggraph">
+		<canvas id="ratingChart" class="chart" width="300vw" height="160vw"></canvas>
+	</section>
+	<!--Series Type Graph-->
+	<section id="seriesgraph">
+		<canvas id="seriesChart" class="chart" width="300vw" height="160vw"></canvas>
+	</section>
+	<!--Decade Count-->
+	<section id="years">
+		<canvas id="yearChart" class="chart" width="300vw" height="160vw"></canvas>
+	</section>
 </main>
 <!--Footer-->
 <footer>Copyright &copy; 2016 | Created by <a href="http://www.rafaeldejongh.com" target="_blank">Rafa&euml;l De Jongh</a> | <a href="https://myanimelist.net/profile/RafaelDeJongh" target="_blank">MyAnimeList</a></footer>
-<script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.9/jquery.fullPage.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/x2js/1.2.0/xml2json.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js'></script>
+<!--Scripts-->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.9/jquery.fullPage.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/x2js/1.2.0/xml2json.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

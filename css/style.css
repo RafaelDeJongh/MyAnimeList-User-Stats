@@ -92,6 +92,7 @@ button:active:before{
 	width:80%;
 	text-align:center
 }
+#nexist{display:none}
 #home h2{font-size:3em;margin:0;text-transform:capitalize}
 #home h4{margin-top:1em}
 h2{margin-bottom:1em}

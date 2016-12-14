@@ -28,7 +28,7 @@ $("main").hide();
 $("#userfill form").submit(function(e){
 e.preventDefault();
 var MALUser = $("input#username").val();
-$("#userfill").hide().next().show();
+$("#userfill").fadeOut().next().show();
 $("#user").html(MALUser.replace(/([A-Z])/g,' $1').trim()).attr("href","https://myanimelist.net/profile/" + MALUser); 
 //Database Parse
 var request = new XMLHttpRequest();
@@ -40,6 +40,16 @@ request.onload = function(){
 	var x2js = new X2JS();
 	var jsonObj = x2js.xml_str2json(request.responseText);
 	var database = JSON.parse(JSON.stringify(jsonObj));
+	if(database.myanimelist === ""){
+		$("#nexist").fadeIn().nextAll().hide();
+		$("section:not(:first-child),#fp-nav").fadeOut();
+		MALUser="";
+		setTimeout(function(){
+			$("#userfill").fadeIn();
+			$("#nexist").hide().nextAll().fadeIn();
+			$("section,#fp-nav").fadeIn();
+		},6000); 
+	}else{
 	var s20,s30,s40,s50,s60,s70,s80,s90,s00,s10,cYear,countEpisode,cOVA,cTV,cMovie,cSpecial,cONA,cMusic,one,two,tree,four,five,six,seven,eight,nine,ten;
 	s20=s30=s40=s50=s60=s70=s80=s90=s00=s10=cYear=countEpisode=cOVA=cTV=cMovie=cSpecial=cONA=cMusic=one=two=tree=four=five=six=seven=eight=nine=ten=0;
 //Database Anime Loop
@@ -217,6 +227,7 @@ var lineChart = new Chart(lChart,{
 	}
 });
 //Request Check End
+}
 }
 };
 request.send();
